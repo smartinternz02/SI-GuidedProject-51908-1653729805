@@ -1,0 +1,409 @@
+﻿<process name="Student Database Grading" version="1.0" bpversion="7.0.1.49890" narrative="Process created" byrefcollection="true" preferredid="fb283db8-17f8-4e49-80eb-348209e5e360">
+  <view>
+    <camerax>525</camerax>
+    <cameray>141</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <stage stageid="59ca4594-cb0c-4ebc-b1fd-7b48726c0480" name="Start" type="Start">
+    <display x="15" y="-165" />
+    <onsuccess>9424f8dd-9d08-4533-8212-bd38dc753017</onsuccess>
+  </stage>
+  <stage stageid="d2adea85-eab4-4c05-93e3-35241ecc26ee" name="End" type="End">
+    <display x="825" y="555" />
+  </stage>
+  <stage stageid="83df3279-91fd-4dd7-8ed3-35ede3b1f5e9" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="9424f8dd-9d08-4533-8212-bd38dc753017" name="Data - SQL Server::Set Connection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="90" y="-165" />
+    <inputs>
+      <input type="text" name="Server" friendlyname="Server" narrative="The name of the server and, if necessary, instance name of the SQL Server instance to connect to" expr="&quot;localhost&quot;" />
+      <input type="text" name="Database" friendlyname="Database" narrative="The name of the database to connect to" expr="&quot;Student Database&quot;" />
+      <input type="text" name="User" friendlyname="User" narrative="If appropriate, the login name to use to connect to SQL Server. If left empty, windows authentication using the current user will be used instead of SQL Server authentication" expr="" />
+      <input type="password" name="Password" friendlyname="Password" narrative="If appropriate, the password to use with the above login name to access SQL Server. Unused for windows authentication" expr="" />
+    </inputs>
+    <onsuccess>2eb258ee-4f3a-4568-87ca-caff310837b4</onsuccess>
+    <resource object="Data - SQL Server" action="Set Connection" />
+  </stage>
+  <stage stageid="5f170a74-1fe5-486b-a911-5d6556f16bab" name="IA Marks" type="Collection">
+    <display x="225" y="300" w="90" h="60" />
+    <datatype>collection</datatype>
+    <alwaysinit />
+    <collectioninfo>
+      <field name="USN" type="text" />
+      <field name="Subject Code" type="text" />
+      <field name="SSID" type="text" />
+      <field name="Test1" type="number" />
+      <field name="Test2" type="number" />
+      <field name="Test3" type="number" />
+      <field name="FinalIA" type="number" />
+      <field name="Grade" type="text" />
+    </collectioninfo>
+    <initialvalue>
+      <row>
+        <field name="USN" type="text" value="RegNo14025" />
+        <field name="Subject Code" type="text" value="15CS36" />
+        <field name="SSID" type="text" value="CSE7A" />
+        <field name="Test1" type="number" value="30" />
+        <field name="Test2" type="number" value="29" />
+        <field name="Test3" type="number" value="30" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo14025" />
+        <field name="Subject Code" type="text" value="15CS32" />
+        <field name="SSID" type="text" value="CSE7A" />
+        <field name="Test1" type="number" value="24" />
+        <field name="Test2" type="number" value="27" />
+        <field name="Test3" type="number" value="28" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo14025" />
+        <field name="Subject Code" type="text" value="15CS33" />
+        <field name="SSID" type="text" value="CSE7A" />
+        <field name="Test1" type="number" value="13" />
+        <field name="Test2" type="number" value="14" />
+        <field name="Test3" type="number" value="19" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo14025" />
+        <field name="Subject Code" type="text" value="15CS34" />
+        <field name="SSID" type="text" value="CSE7A" />
+        <field name="Test1" type="number" value="27" />
+        <field name="Test2" type="number" value="19" />
+        <field name="Test3" type="number" value="20" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo14025" />
+        <field name="Subject Code" type="text" value="15CS35" />
+        <field name="SSID" type="text" value="CSE7A" />
+        <field name="Test1" type="number" value="19" />
+        <field name="Test2" type="number" value="25" />
+        <field name="Test3" type="number" value="27" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo13062" />
+        <field name="Subject Code" type="text" value="15CS31" />
+        <field name="SSID" type="text" value="CSE8A" />
+        <field name="Test1" type="number" value="30" />
+        <field name="Test2" type="number" value="26" />
+        <field name="Test3" type="number" value="30" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo13062" />
+        <field name="Subject Code" type="text" value="15CS32" />
+        <field name="SSID" type="text" value="CSE8A" />
+        <field name="Test1" type="number" value="30" />
+        <field name="Test2" type="number" value="27" />
+        <field name="Test3" type="number" value="22" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo13062" />
+        <field name="Subject Code" type="text" value="15CS33" />
+        <field name="SSID" type="text" value="CSE8A" />
+        <field name="Test1" type="number" value="30" />
+        <field name="Test2" type="number" value="26" />
+        <field name="Test3" type="number" value="27" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo13062" />
+        <field name="Subject Code" type="text" value="15CS34" />
+        <field name="SSID" type="text" value="CSE8A" />
+        <field name="Test1" type="number" value="30" />
+        <field name="Test2" type="number" value="30" />
+        <field name="Test3" type="number" value="30" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+      <row>
+        <field name="USN" type="text" value="RegNo13062" />
+        <field name="Subject Code" type="text" value="15CS35" />
+        <field name="SSID" type="text" value="CSE8A" />
+        <field name="Test1" type="number" value="30" />
+        <field name="Test2" type="number" value="29" />
+        <field name="Test3" type="number" value="26" />
+        <field name="FinalIA" type="number" value="" />
+        <field name="Grade" type="text" value="" />
+      </row>
+    </initialvalue>
+  </stage>
+  <stage stageid="2eb258ee-4f3a-4568-87ca-caff310837b4" name="Loop Start1" type="LoopStart">
+    <loginhibit onsuccess="true" />
+    <display x="165" y="-165" />
+    <onsuccess>15776cda-1e02-44e6-a15a-3862cf2fe580</onsuccess>
+    <groupid>f55fb6f2-fc05-4d8c-aeab-ad47846965c3</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>IA Marks</loopdata>
+  </stage>
+  <stage stageid="557793a8-f1af-443c-bfad-fdbb7f723452" name="Loop End1" type="LoopEnd">
+    <loginhibit onsuccess="true" />
+    <display x="720" y="75" />
+    <onsuccess>a0d33563-1c9a-4df6-9f36-1c684ba2e00b</onsuccess>
+    <groupid>f55fb6f2-fc05-4d8c-aeab-ad47846965c3</groupid>
+  </stage>
+  <stage stageid="15776cda-1e02-44e6-a15a-3862cf2fe580" name="Calculate Total Marks" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="270" y="-165" w="90" h="30" />
+    <onsuccess>d37d3021-2d6f-4928-96f1-1133231a8b9c</onsuccess>
+    <calculation expression="([IA Marks.Test3] + [IA Marks.Test2] + [IA Marks.Test1])/3" stage="IA Marks.FinalIA" />
+  </stage>
+  <stage stageid="d37d3021-2d6f-4928-96f1-1133231a8b9c" name="Choice1" type="ChoiceStart">
+    <display x="375" y="-165" />
+    <groupid>91c061e6-1b35-4181-8bf4-3c9845eb358f</groupid>
+    <choices>
+      <choice expression="[IA Marks.FinalIA]&gt;=20">
+        <name>A</name>
+        <distance>60</distance>
+        <ontrue>b493e5e1-6685-4a58-bf49-ad1267765544</ontrue>
+      </choice>
+      <choice expression="[IA Marks.FinalIA] &gt;=15">
+        <name>B</name>
+        <distance>120</distance>
+        <ontrue>c624bf5a-e9d7-4a4a-82ac-ea0886a77fc6</ontrue>
+      </choice>
+      <choice expression="[IA Marks.FinalIA] &gt;=10">
+        <name>C</name>
+        <distance>210</distance>
+        <ontrue>f463898d-0747-40e3-a406-992cf5b67729</ontrue>
+      </choice>
+    </choices>
+  </stage>
+  <stage stageid="8d83235c-6405-4cb6-8c34-d6e375c89e72" name="Otherwise1" type="ChoiceEnd">
+    <display x="375" y="120" />
+    <onsuccess>e5bfff74-a187-4594-af6f-8d3be27e5c65</onsuccess>
+    <groupid>91c061e6-1b35-4181-8bf4-3c9845eb358f</groupid>
+  </stage>
+  <stage stageid="b493e5e1-6685-4a58-bf49-ad1267765544" name="A Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="465" y="-105" />
+    <onsuccess>1aabba46-7f42-4d51-8944-5fd499a5c77c</onsuccess>
+    <calculation expression="&quot;A&quot;" stage="IA Marks.Grade" />
+  </stage>
+  <stage stageid="c624bf5a-e9d7-4a4a-82ac-ea0886a77fc6" name="B Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="465" y="-45" />
+    <onsuccess>63de5624-50ec-483e-af60-f2aa23e78286</onsuccess>
+    <calculation expression="&quot;B&quot;" stage="IA Marks.Grade" />
+  </stage>
+  <stage stageid="f463898d-0747-40e3-a406-992cf5b67729" name="C Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="465" y="45" />
+    <onsuccess>2a063110-8295-40d6-85f7-c5cb0b3e88e8</onsuccess>
+    <calculation expression="&quot;C&quot;" stage="IA Marks.Grade" />
+  </stage>
+  <stage stageid="e5bfff74-a187-4594-af6f-8d3be27e5c65" name="Fail Grade" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="465" y="120" />
+    <onsuccess>8fdc1aec-0dba-4e39-8172-8138aaff05d5</onsuccess>
+    <calculation expression="&quot;Fail&quot;" stage="IA Marks.Grade" />
+  </stage>
+  <stage stageid="f81315a6-5daf-4d70-bcc8-7f02a6bf2afb" name="Data - SQL Server::Execute" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="615" y="0" />
+    <inputs>
+      <input type="text" name="Query" friendlyname="Query" narrative="The SQL query to use to perform this action" expr="&quot;INSERT INTO IAMARKS (USN, SUBCODE, SSID, TEST1, TEST2, TEST3, FINALIA, GRADES) VALUES ('&quot; &amp; [IA &#xA;Marks.USN] &amp; &quot;','&quot; &amp; [IA Marks.Subject Code] &amp; &quot;','&quot; &amp; [IA Marks.SSID] &amp; &quot;', &quot; &amp; [IA Marks.Test1] &amp; &quot;, &quot; &amp; [IA &#xA;Marks.Test2] &amp; &quot;, &quot; &amp; [IA Marks.Test3] &amp; &quot;,&quot; &amp; [IA Marks.FinalIA] &amp; &quot;,'&quot; &amp; [IA Marks.Grade] &amp; &quot;') ;&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Message" />
+    </outputs>
+    <onsuccess>ca77ce54-9c47-485e-929f-6b366a90b411</onsuccess>
+    <resource object="Data - SQL Server" action="Execute" />
+  </stage>
+  <stage stageid="4e46856c-a05b-46da-9a5e-ae41a0b1cb02" name="Success" type="Data">
+    <display x="180" y="135" />
+    <datatype>flag</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="780e8ff0-767e-4284-aee2-5cc5e3d10b67" name="Message" type="Data">
+    <display x="150" y="195" w="90" h="30" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="ca77ce54-9c47-485e-929f-6b366a90b411" name="Decision1" type="Decision">
+    <display x="720" y="0" />
+    <decision expression="[Success]" />
+    <ontrue>557793a8-f1af-443c-bfad-fdbb7f723452</ontrue>
+    <onfalse>67257566-72ed-4034-902c-af200af3ad88</onfalse>
+  </stage>
+  <stage stageid="67257566-72ed-4034-902c-af200af3ad88" name="Exception1" type="Exception">
+    <display x="720" y="-60" />
+    <exception localized="yes" type="Data base exception" detail="&quot;Can't enter dupicate values&quot;" />
+  </stage>
+  <stage stageid="b91b5224-c814-4a6c-b292-370c96c6b1fb" name="Email" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="90" y="30" />
+    <datatype>text</datatype>
+    <initialvalue xml:space="preserve">pratyus.20bcr7076@vitap.ac.in</initialvalue>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="2c763a6d-ec41-4c30-836a-2ceb61ab7feb" name="Password" type="Data">
+    <loginhibit onsuccess="true" />
+    <display x="165" y="30" />
+    <datatype>password</datatype>
+    <initialvalueenc>36,26,2,70,26,85,31,19,44,17,7,92,24,81,5,22</initialvalueenc>
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="b4028408-e7bf-426c-9d89-cdc4d7b78cfc" name="Block1" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="60" y="105" w="165" h="60" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="38017a73-083c-4800-9f5f-b81dc0add8e5" name="Block2" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="60" y="-15" w="150" h="75" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+  <stage stageid="a0d33563-1c9a-4df6-9f36-1c684ba2e00b" name="Email - POP3/SMTP::Configure" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="720" y="135" w="90" h="30" />
+    <inputs>
+      <input type="text" name="Username" friendlyname="Username" narrative="The POP3 and SMTP Username" expr="[Email]" />
+      <input type="password" name="Password" friendlyname="Password" narrative="The POP3 and SMTP Password" expr="[Password]" />
+      <input type="text" name="POP3 Server" friendlyname="POP3 Server" narrative="The POP3 Server address e.g. pop.domain.com" expr="&quot;pop.gmail.com&quot;" />
+      <input type="text" name="SMTP Server" friendlyname="SMTP Server" narrative="The SMTP Server address e.g. smtp.domain.com" expr="&quot;smtp.gmail.com&quot;" />
+      <input type="number" name="POP3 Port" friendlyname="POP3 Port" narrative="The POP3 Port, e.g. 110 or 995" expr="995" />
+      <input type="number" name="SMTP Port" friendlyname="SMTP Port" narrative="The SMTP Port, e.g 25 or 465" expr="587" />
+      <input type="flag" name="POP3 UseSSL" friendlyname="POP3 UseSSL" narrative="Whether to use SSL for POP3" expr="True" />
+      <input type="flag" name="SMTP UseSSL" friendlyname="SMTP UseSSL" narrative="Whether to use SSL for SMTP" expr="True" />
+    </inputs>
+    <onsuccess>94d85fcd-b455-4a7a-bde3-a14206fce501</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Configure" />
+  </stage>
+  <stage stageid="94d85fcd-b455-4a7a-bde3-a14206fce501" name="Data - SQL Server::Get Collection" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="720" y="195" />
+    <inputs>
+      <input type="text" name="SQL" friendlyname="SQL" narrative="The SQL query to use to perform this action" expr="&quot;select s.Sname, s.Email, su.Sem, su.Title, m.test1, m.test2, m.test3, m.finalia, m.grades from student s, subject su, iamarks m where s.usn = m.usn and m.subcode = su.subcode;&quot;" />
+    </inputs>
+    <outputs>
+      <output type="flag" name="Success" friendlyname="Success" narrative="Flag indicating success (True) or failure (False)" stage="Success" />
+      <output type="text" name="Message" friendlyname="Message" narrative="Error message giving detail regarding why this action failed" stage="Error Message" />
+      <output type="collection" name="Results" friendlyname="Results" narrative="The collection of results from the query" stage="Student" />
+    </outputs>
+    <onsuccess>5be8478d-1c9f-4324-b4b4-51a04787f7e9</onsuccess>
+    <resource object="Data - SQL Server" action="Get Collection" />
+  </stage>
+  <stage stageid="512d2618-876b-4476-b71a-87785a9d1642" name="Error Message" type="Data">
+    <display x="105" y="135" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="c1cd166a-3710-4bdd-bce8-25fe4104b318" name="Student" type="Collection">
+    <display x="120" y="300" w="90" h="60" />
+    <datatype>collection</datatype>
+    <private />
+    <alwaysinit />
+    <collectioninfo>
+      <field name="Sname" type="text" />
+      <field name="Email" type="text" />
+      <field name="Sem" type="number" />
+      <field name="Title" type="text" />
+      <field name="test1" type="number" />
+      <field name="test2" type="number" />
+      <field name="test3" type="number" />
+      <field name="finalia" type="number" />
+      <field name="grades" type="text" />
+    </collectioninfo>
+  </stage>
+  <stage stageid="5be8478d-1c9f-4324-b4b4-51a04787f7e9" name="Decision2" type="Decision">
+    <display x="720" y="315" />
+    <decision expression="[Success]" />
+    <ontrue>d5809609-18c2-43d1-9488-eb9efe63b415</ontrue>
+    <onfalse>25dde6c3-d209-4491-bf6e-a7d65ac234a9</onfalse>
+  </stage>
+  <stage stageid="25dde6c3-d209-4491-bf6e-a7d65ac234a9" name="Exception2" type="Exception">
+    <display x="600" y="315" />
+    <exception localized="yes" type="Database Exception" detail="&quot;Could not fetch the data&quot;" />
+  </stage>
+  <stage stageid="d5809609-18c2-43d1-9488-eb9efe63b415" name="Loop Start2" type="LoopStart">
+    <loginhibit onsuccess="true" />
+    <display x="825" y="315" />
+    <onsuccess>4517189a-d9dc-4412-a56f-4ad5a5e1b364</onsuccess>
+    <groupid>ec7d344f-267e-48ed-9e31-81417bbba90e</groupid>
+    <looptype>ForEach</looptype>
+    <loopdata>Student</loopdata>
+  </stage>
+  <stage stageid="0637d562-a9a5-4875-b2c1-ab707589a9f0" name="Loop End2" type="LoopEnd">
+    <loginhibit onsuccess="true" />
+    <display x="825" y="495" />
+    <onsuccess>d2adea85-eab4-4c05-93e3-35241ecc26ee</onsuccess>
+    <groupid>ec7d344f-267e-48ed-9e31-81417bbba90e</groupid>
+  </stage>
+  <stage stageid="4517189a-d9dc-4412-a56f-4ad5a5e1b364" name="Message" type="Calculation">
+    <loginhibit onsuccess="true" />
+    <display x="825" y="375" />
+    <onsuccess>737550c0-6048-471f-81e9-cee2d738691a</onsuccess>
+    <calculation expression="&quot;Your child, &quot; &amp; [Student.Sname] &amp; &quot; has scored, &quot; &amp; [Student.test1] &amp; &quot;, &quot; &amp; [Student.test2] &amp; &quot; and &quot; &amp;&#xA;[Student.test3] &amp; &quot; in 1st, 2nd and 3rd test His/Her average is, &quot; &amp; [Student.finalia] &amp; &quot; and secured, &quot; &amp;&#xA;[Student.grades] &amp; &quot; grade in &quot; &amp; [Student.Sem] &amp; &quot; sem in &quot; &amp; [Student.Title] &amp; &quot; subject. &quot;" stage="Message" />
+  </stage>
+  <stage stageid="737550c0-6048-471f-81e9-cee2d738691a" name="Email - POP3/SMTP::Send Message" type="Action">
+    <loginhibit onsuccess="true" />
+    <display x="825" y="435" />
+    <inputs>
+      <input type="text" name="From" friendlyname="From" narrative="The email address of the sender." expr="[Email]" />
+      <input type="text" name="To" friendlyname="To" narrative="The email address of the recipient. To address multiple recipients use the format &quot;john.smith@example.com, henry.jones@example.com&quot; OR &quot;John Smith &lt;john.smith@example.com&gt;, Henry Jones &lt;henry.jones@example.com&gt;&quot;." expr="&quot;basulipratyus@gmail.com&quot;" />
+      <input type="text" name="Subject" friendlyname="Subject" narrative="The subject of the email." expr="[Student.Sname] &amp; &quot;'s marks&quot;" />
+      <input type="text" name="Body" friendlyname="Body" narrative="The body of the email." expr="&quot;Greetings of the Day,&quot; &amp; NewLine() &amp; [Message] &amp; NewLine() &amp; NewLine() &amp; &quot;Thank you&quot;" />
+      <input type="collection" name="Attachments" friendlyname="Attachments" narrative="A Collection containing a list of files to add to the email as attachments." expr="" />
+      <input type="flag" name="BodyIsHTML" friendlyname="BodyIsHTML" narrative="Indicates if the body should be sent as HTML" expr="" />
+    </inputs>
+    <onsuccess>0637d562-a9a5-4875-b2c1-ab707589a9f0</onsuccess>
+    <resource object="Email - POP3/SMTP" action="Send Message" />
+  </stage>
+  <stage stageid="1aabba46-7f42-4d51-8944-5fd499a5c77c" name="Anchor1" type="Anchor">
+    <loginhibit onsuccess="true" />
+    <display x="525" y="-105" w="10" h="10" />
+    <onsuccess>63de5624-50ec-483e-af60-f2aa23e78286</onsuccess>
+  </stage>
+  <stage stageid="63de5624-50ec-483e-af60-f2aa23e78286" name="Anchor2" type="Anchor">
+    <loginhibit onsuccess="true" />
+    <display x="525" y="-45" w="10" h="10" />
+    <onsuccess>e12f8168-17d3-4405-b661-740d54cb6bfc</onsuccess>
+  </stage>
+  <stage stageid="2a063110-8295-40d6-85f7-c5cb0b3e88e8" name="Anchor3" type="Anchor">
+    <loginhibit onsuccess="true" />
+    <display x="525" y="45" w="10" h="10" />
+    <onsuccess>e12f8168-17d3-4405-b661-740d54cb6bfc</onsuccess>
+  </stage>
+  <stage stageid="8fdc1aec-0dba-4e39-8172-8138aaff05d5" name="Anchor4" type="Anchor">
+    <loginhibit onsuccess="true" />
+    <display x="525" y="120" w="10" h="10" />
+    <onsuccess>2a063110-8295-40d6-85f7-c5cb0b3e88e8</onsuccess>
+  </stage>
+  <stage stageid="e12f8168-17d3-4405-b661-740d54cb6bfc" name="Anchor5" type="Anchor">
+    <loginhibit onsuccess="true" />
+    <display x="525" y="0" w="10" h="10" />
+    <onsuccess>f81315a6-5daf-4d70-bcc8-7f02a6bf2afb</onsuccess>
+  </stage>
+  <stage stageid="e0d527c6-7615-437f-8163-16dab2ee408c" name="Block3" type="Block">
+    <loginhibit onsuccess="true" />
+    <display x="60" y="240" w="210" h="120" />
+    <font family="Segoe UI" size="10" style="Regular" color="7FB2E5" />
+  </stage>
+</process>
