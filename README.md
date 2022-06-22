@@ -8,5 +8,5 @@ In this Project we create a bot that Retrives Student data from the Database and
 - Save the Grades back to the database
 - Send mail to all the student regarding their performance based on the retrived collection
 
-
+### Explanation video link : https://drive.google.com/file/d/1iC_Dj-nNn906asrxpYeNDLVSoELReK2v/view?usp=sharing
 
