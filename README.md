@@ -13,3 +13,6 @@ In this Project we create a bot that Retrives Student data from the Database and
 ## Process flow Screenshot
 ![Blue Prism Process Flow Screenshot](https://github.com/smartinternz02/SI-GuidedProject-51908-1653729805/blob/492b6baea095d1efe92036961156c98a225e35c6/Screenshots/Process%20flow.jpg)
 
+## Bot Tasks
+![Tasks performed by Bot](https://github.com/smartinternz02/SI-GuidedProject-51908-1653729805/blob/ec68b8f5b0a25ac2ec9b5f4b0631ab1ff40caea6/Screenshots/Tasks%20Performed%20by%20bot.jpg)
+
